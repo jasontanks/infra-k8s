@@ -3,13 +3,14 @@ kind: Application
 metadata:
   name: service-a
 spec:
+  project: default
   source:
     repoURL: https://github.com/jasontanks/infra-k8s
     path: k8s/service-a
+    targetRevision: HEAD
   destination:
     server: https://kubernetes.default.svc
     namespace: microservices-demo
-  project: default
   syncPolicy:
     automated:
       prune: true

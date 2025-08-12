@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: service-b
-          image: jasontanks/service-b:latest
+          image: ghcr.io/jasontanks/service-b:latest
           ports:
             - containerPort: 5000
           readinessProbe:

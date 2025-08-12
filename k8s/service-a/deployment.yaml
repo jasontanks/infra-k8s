@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: service-a
-          image: jasontanks/service-a:latest
+          image: ghcr.io/jasontanks/service-a:latest
           ports:
             - containerPort: 3000
           readinessProbe:

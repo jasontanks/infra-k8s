@@ -2,6 +2,7 @@
 kind: Deployment
 metadata:
   name: service-a
+  namespace: microservices-demo
 spec:
   replicas: 1
   selector:
@@ -14,6 +15,12 @@ spec:
     spec:
       containers:
         - name: service-a
-          image: nginx
+          image: jasontanks/service-a:latest
           ports:
-            - containerPort: 80
+            - containerPort: 3000
+          readinessProbe:
+            httpGet:
+              path: /healthz
+              port: 3000
+            initialDelaySeconds: 5
+            periodSeconds: 10

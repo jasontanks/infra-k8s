@@ -18,9 +18,3 @@ spec:
           image: ghcr.io/jasontanks/service-a:latest
           ports:
             - containerPort: 3000
-          readinessProbe:
-            httpGet:
-              path: /healthz
-              port: 3000
-            initialDelaySeconds: 5
-            periodSeconds: 10
